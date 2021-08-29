@@ -1,21 +1,27 @@
-public class Dollar {
-    int amount =5*2;
+public class Dollar extends Money{
 
-    Dollar(int amount){
-        this.amount = amount;
+
+    Dollar(int amount, String currency){
+        super(amount, currency);
     }
 
-    Dollar times (int multiplier){
+    Money times (int multiplier){
 
-        return new Dollar( amount * multiplier);
+        return Money.dollar(amount * multiplier );
+    }
+    String currency(){
+        return currency;
     }
 
-    public boolean equals(Object object){
-        Dollar dollar = (Dollar) object;
-        return amount == dollar.amount;
-    }
-    //todo equals()
 
+
+    //todo Co z zaokrąglaniem
     //todo hashCode()
+
+    //todo porownanie z nullem
+    // todo porownanie z obiektem
+
+
+    //todo 5USD + 10CHF = 10 USD przy kursie USD:CHF 2:1
 }
 
